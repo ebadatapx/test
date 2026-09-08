@@ -1,0 +1,295 @@
+/**
+ * Frontend Stylesheet for RSS Feed Manager
+ * Modern, responsive cards layout & single template overrides
+ */
+
+.rfm-news-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+    gap: 30px;
+    margin: 20px 0;
+}
+
+.rfm-news-grid,
+.rfm-news-grid * {
+    font-family: inherit !important;
+}
+
+.rfm-news-card {
+    background: #ffffff;
+    border: 1px solid #e2e8f0;
+    border-radius: 12px;
+    overflow: hidden;
+    box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.05), 0 2px 4px -2px rgba(0, 0, 0, 0.05);
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+}
+
+.rfm-news-card:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -4px rgba(0, 0, 0, 0.1);
+    border-color: #cbd5e1;
+}
+
+.rfm-card-image {
+    position: relative;
+    padding-bottom: 56.25%; /* 16:9 Aspect Ratio */
+    overflow: hidden;
+    background: #f1f5f9;
+}
+
+.rfm-card-image img {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 0.5s ease;
+}
+
+.rfm-news-card:hover .rfm-card-image img {
+    transform: scale(1.05);
+}
+
+.rfm-card-content {
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+    flex-grow: 1;
+}
+
+.rfm-card-meta {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    font-size: 12px;
+    color: #64748b;
+    margin-bottom: 12px;
+}
+
+.rfm-card-source {
+    background: rgba(99, 102, 241, 0.1);
+    color: #4f46e5;
+    padding: 2px 8px;
+    border-radius: 9999px;
+    font-weight: 600;
+    font-size: 10px;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+}
+
+.rfm-card-title {
+    font-size: 18px;
+    line-height: 1.4;
+    margin: 0 0 10px 0;
+    font-weight: 700;
+    font-family: sans-serif !important;
+}
+
+.rfm-card-title a {
+    color: #0f172a;
+    text-decoration: none;
+    transition: color 0.2s ease;
+}
+
+.rfm-card-title a:hover {
+    color: #4f46e5;
+}
+
+.rfm-card-excerpt {
+    font-size: 14px;
+    line-height: 1.6;
+    color: #475569;
+    margin-bottom: 20px;
+    flex-grow: 1;
+}
+
+.rfm-card-footer {
+    border-top: 1px solid #f1f5f9;
+    padding-top: 15px;
+    margin-top: auto;
+}
+
+.rfm-readmore-btn {
+    display: inline-flex;
+    align-items: center;
+    color: #4f46e5;
+    text-decoration: none;
+    font-size: 14px;
+    font-weight: 600;
+    transition: transform 0.2s ease, color 0.2s ease;
+}
+
+.rfm-readmore-btn span.dashicons {
+    font-size: 18px;
+    width: 18px;
+    height: 18px;
+    margin-left: 4px;
+    transition: transform 0.2s ease;
+}
+
+.rfm-readmore-btn:hover {
+    color: #312e81;
+}
+
+.rfm-readmore-btn:hover span.dashicons {
+    transform: translateX(4px);
+}
+
+.rfm-no-news {
+    text-align: center;
+    color: #64748b;
+    padding: 30px;
+    border: 1px dashed #cbd5e1;
+    border-radius: 8px;
+}
+
+/* Single Template Styling */
+.rfm-single-news-wrap {
+    max-width: 800px;
+    margin: 40px auto;
+    padding: 0 20px;
+}
+
+.rfm-single-news-wrap,
+.rfm-single-news-wrap * {
+    font-family: inherit !important;
+}
+
+.rfm-single-article {
+    background: #ffffff;
+    border-radius: 16px;
+    overflow: hidden;
+    box-shadow: 0 10px 25px -5px rgba(0, 0, 0, 0.05), 0 8px 10px -6px rgba(0, 0, 0, 0.05);
+    border: 1px solid #e2e8f0;
+}
+
+.rfm-single-hero {
+    height: 400px;
+    background-size: cover;
+    background-position: center;
+    display: flex;
+    align-items: flex-end;
+    position: relative;
+}
+
+.rfm-single-hero-content {
+    padding: 40px;
+    color: #ffffff;
+    z-index: 2;
+    width: 100%;
+}
+
+.rfm-single-source {
+    display: inline-block;
+    background: #4f46e5;
+    color: #ffffff;
+    padding: 4px 12px;
+    border-radius: 9999px;
+    font-size: 11px;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+    margin-bottom: 12px;
+}
+
+.rfm-single-title {
+    color: #ffffff;
+    font-size: 32px;
+    line-height: 1.25;
+    font-weight: 800;
+    margin: 0 0 12px 0;
+    text-shadow: 0 2px 4px rgba(0,0,0,0.5);
+}
+
+.rfm-single-meta {
+    display: flex;
+    gap: 20px;
+    font-size: 13px;
+    color: #e2e8f0;
+}
+
+.rfm-meta-item {
+    display: flex;
+    align-items: center;
+    gap: 4px;
+}
+
+.rfm-meta-item span.dashicons {
+    font-size: 16px;
+    width: 16px;
+    height: 16px;
+}
+
+/* Header style if no hero image is present */
+.rfm-single-header-no-hero {
+    padding: 40px 40px 20px 40px;
+    border-bottom: 1px solid #f1f5f9;
+}
+
+.rfm-single-header-no-hero .rfm-single-source {
+    margin-bottom: 16px;
+}
+
+.rfm-single-title-no-hero {
+    font-size: 32px;
+    font-weight: 800;
+    color: #0f172a;
+    margin: 0 0 16px 0;
+    line-height: 1.25;
+}
+
+.rfm-single-meta-no-hero {
+    display: flex;
+    gap: 20px;
+    font-size: 13px;
+    color: #64748b;
+}
+
+/* Main Content Area */
+.rfm-single-content {
+    padding: 40px;
+    color: #334155;
+    font-size: 16px;
+    line-height: 1.8;
+}
+
+.rfm-single-content p {
+    margin-bottom: 24px;
+}
+
+.rfm-single-source-action {
+    margin-top: 40px;
+    padding-top: 30px;
+    border-top: 1px solid #f1f5f9;
+    text-align: center;
+}
+
+.rfm-source-btn {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    background: #0f172a;
+    color: #ffffff;
+    text-decoration: none;
+    padding: 12px 24px;
+    border-radius: 8px;
+    font-weight: 600;
+    font-size: 15px;
+    transition: all 0.2s ease;
+}
+
+.rfm-source-btn span.dashicons {
+    font-size: 18px;
+    width: 18px;
+    height: 18px;
+}
+
+.rfm-source-btn:hover {
+    background: #4f46e5;
+    color: #ffffff;
+    transform: translateY(-1px);
+}
