@@ -1,5 +1,8 @@
+<h1>
+    Hello 12:16
+</h1>
 <?php
-testestte
+
 define('DB_NAME', 'parentscanvas_db');
 define('DB_USER', 'parentscanvas_user');
 define('DB_PASSWORD', '*9Z!13ub(^igGF?6');
